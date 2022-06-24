@@ -1,0 +1,431 @@
+nome = input("Qual é o seu nome?")
+print("Olá ", nome)
+
+salario = input("Digite o seu salário: \n")
+imposto = float( salario ) * 0.25
+print(imposto)
+
+print("Qual o seu rendimento anual?")
+
+rendimento = float( input() )
+
+if (rendimento <= 28000 ):
+  print("Você está isento")
+  porcentagem = 0
+elif (rendimento > 28000 and rendimento <= 35000):
+  print ("Você vai pagar 10%")
+  porcentagem = 10
+else:
+  print("Você vai pagar 25%")
+  porcentagem = 25
+
+if (porcentagem > 0):
+  imposto_pagar = rendimento * (porcentagem / 100)
+  print("Você vai pagar ",imposto_pagar)
+
+
+a = 55
+b = 7
+
+print (a % b)
+
+
+centavos =  int(input('Informe a quantia de centavos: '))
+um_pila = (centavos - (centavos%100)) 
+cinquenta = (centavos - um_pila) - ((centavos - um_pila)%50)
+vintecinco = (centavos - um_pila - cinquenta) - ((centavos - um_pila - cinquenta)%25)
+dez = (centavos - um_pila - cinquenta -vintecinco) - ((centavos - um_pila - cinquenta - vintecinco)%10)
+cinco = (centavos - um_pila - cinquenta -vintecinco - dez ) - ((centavos - um_pila - cinquenta - vintecinco - dez)%5)
+um_centavo = (centavos - um_pila - cinquenta -vintecinco - dez - cinco) - ((centavos - um_pila - cinquenta - vintecinco - dez - cinco)%1)
+print ('1 real: ' + str(um_pila/100) + '\n50: ' + str(cinquenta/50) + '\n25: ' + str(vintecinco/25) + '\n10: ' + str(dez/10) + '\n5:' + str(cinco/5) + '\n1 centavo: ' + str(um_centavo/1))
+
+
+centavos = int(input("Informe a quantia de centavos: "))
+
+moedas_de_um_pila = centavos // 100
+sobra = centavos - moedas_de_um_pila * 100
+print ("Moedas de 1 real: ", moedas_de_um_pila, "Sobrou: ", sobra)
+
+moedas_de_cinquenta = sobra // 50
+sobra = sobra % 50
+print ("Moedas de 50 centavos: ", moedas_de_cinquenta, "Sobrou: ", sobra)
+
+moedas_de_25 = sobra // 25
+sobra = sobra % 25
+print ("Moedas de 25 centavos: ", moedas_de_25, "Sobrou: ", sobra)
+
+moedas_de_10 = sobra // 10
+sobra = sobra % 10
+print ("Moedas de 10 centavos: ", moedas_de_10, "Sobrou: ", sobra)
+
+moedas_de_5 = sobra // 5
+sobra = sobra % 5
+print ("Moedas de 5 centavos: ", moedas_de_5, "Sobrou: ", sobra)
+
+moedas_de_1 = sobra // 1
+sobra = sobra % 1
+print ("Moedas de 1 centavos: ", moedas_de_1, "Sobrou: ", sobra)
+
+centavos = int(input("Informe a quantia de centavos: "))
+
+moedas_de_um_pila = centavos // 100
+sobra = centavos - moedas_de_um_pila * 100
+
+
+moedas_de_cinquenta = sobra // 50
+sobra = sobra % 50
+
+
+moedas_de_25 = sobra // 25
+sobra = sobra % 25
+print ("Moedas de 25 centavos: ", moedas_de_25, "Sobrou: ", sobra)
+
+moedas_de_10 = sobra // 10
+sobra = sobra % 10
+print ("Moedas de 10 centavos: ", moedas_de_10, "Sobrou: ", sobra)
+
+moedas_de_5 = sobra // 5
+sobra = sobra % 5
+print ("Moedas de 5 centavos: ", moedas_de_5, "Sobrou: ", sobra)
+
+moedas_de_1 = sobra // 1
+sobra = sobra % 1
+print ("Moedas de 1 centavos: ", moedas_de_1, "Sobrou: ", sobra)
+
+print ("Moedas de 1 real: ", moedas_de_um_pila, "Sobrou: ", sobra)
+
+
+
+
+n = input("Digite o seu nome: ")
+
+an = int( input("Digite o ano de nascimento: ") )
+
+at = 2021
+
+i = at - an
+
+print ( "Olá ", n, ", você tem ", i, " anos" )
+
+
+n1 = input ( "Digite a nota 1" )
+n2 = input ( "Digite a nota 2" )
+n3 = input ( "Digite a nota 3" )
+
+m = (float(n1) * 2 + float(n2) * 4 + float(n3) * 6 ) / ( 2 + 4 + 6 )
+
+print ("A média final é ", m)
+
+
+cf = float( input("Digite o custo de fábrica: ") )
+
+imposto = 45 / 100
+
+p_dist = 28 / 100
+
+cc = cf + (cf * imposto)
+
+print(cc)
+
+
+opcoes = {
+    "1": "Refrigerante de cola",
+    "2": "Batata-frita",
+    "3": "Barra de cereal",
+    "4": "Água",
+    "5": "Água com gás",
+    "6": "Achocolatado",
+    "7": "Bala de Menta",    
+}
+
+status = "AGUARDANDO"
+
+
+while ( status == "AGUARDANDO" ):
+  opcao = input( "Digite INICIAR para escolher um produto: " )
+  if ( opcao != "INICIAR" ):
+    print( "Você Digitou uma opção inválida, o programa terminou!" )
+    status = "FINALIZADO"
+  else:
+    print( "Escolha um produto: " )
+  
+    for chave, valor in opcoes.items():
+      print( chave + " = " + valor )
+  
+    print( "ou digite CANCELAR para retornar ao começo" )
+
+    opcao = input("Digite o código do produto: ")
+
+    if ( opcao != "CANCELAR" ):
+      if ( opcao in opcoes ):
+        print( "Você escolheu " + opcoes[opcao])
+        confirmacao = input( "Digite CONFIRMAR para receber o produto: " )
+        if (confirmacao == "CONFIRMAR"):
+          print( "Obrigado por usar nossa máquina!" ) 
+      else:
+        print("Esse produto não existe") 
+
+
+
+
+import time
+
+status = "desligado"
+
+while ( status == "desligado" ):
+  opcao = input( "Digite ligar para ativar imãs e sensor: " )
+  if ( opcao != "ligar" ):
+    status = "desligado"
+  else:
+    status = "ligado"
+
+print ("Imâs ligados. O Sensor identificou 68°")
+
+angulo = 68
+
+def puxar (angulo):
+  if (angulo > 58):
+    angulo = angulo - 2
+    print('Estou muito longe do navio, só consigo puxar 2')
+    time.sleep(2)
+    print ("Faltam", angulo)
+  elif(angulo > 10):
+    angulo = angulo - 10
+    print('Agora estou perto, consigo puxar 10')
+    time.sleep(2)
+    print ("Faltam", angulo)
+  else:
+    angulo = angulo - 1
+    print ('Estou quase reto, irei diminuir minha força')
+    time.sleep(1)
+    print ("Faltam", angulo)
+
+
+  return angulo  
+
+while (angulo != 0):
+  angulo = puxar(angulo)
+
+print ("Desencalhei, agora posso continuar minha viagem")
+
+while ( status == "ligado" ):
+  opcao = input( "Digite desligar para desativar imãs: " )
+  if ( opcao != "desligar" ):
+    status = "ligado"
+  else:
+    status = "desligado"
+
+print ("Imãs desativados")
+
+
+numeros = []
+
+for i in range(9):
+  num = input("Digite um número inteiro ")
+  numeros.append(int(num))
+
+  presentes = []
+bebem = []
+veganos = 0
+
+controle = True
+
+while(controle == True):
+  nome = input("Digite o nome da pessoa ")
+  vai = input("Vai no churrasco? (S ou N)")
+  if (vai == "S"):
+    presentes.append(nome)
+    bebe = input("A pessoa bebe? (S ou N) ")
+    if (bebe == 'S'):
+      bebem.append(nome)
+      maior_de_18 = input("A pessoa é maior de idade (S ou N)? ")
+      if(maior_de_18 == "N"):
+        bebem.remove(nome)
+  
+  continuar = input("Quer adicionar mais pessoas? (S ou N)")
+  if(continuar == 'S'):
+    controle = True
+  else:
+    controle = False
+
+carne = len(presentes) * 400
+refrigerante = len(bebem) * 2
+
+print("Compre ", carne, " kgs de carne e ", refrigerante, " litros de refrigerante")
+
+
+M = [ [0,0] , [0,0] ]
+R = [ [0,0] , [0,0] ]
+
+
+#solicitando os valores, percorrendo a matriz
+for i in range(2):
+  for j in range(2):
+    M[i][j] = int( input("Digite um valor:") )
+
+#encontrando o maior
+maior = -100000
+for i in range(2):
+  for j in range(2):
+    if (M[i][j] > maior):
+      maior = M[i][j]
+
+# multiplicando os valores para armazenar em R
+for i in range(2):
+  for j in range(2):
+    R[i][j] = M[i][j] * maior
+
+print (M)
+print (R)
+
+
+def primo(n):
+    for val in range(2,n):
+        if n % val == 0:
+            return False
+
+    return True
+
+numeros = []
+primos = []
+posicoes = []
+
+for i in range(0,9):
+    numero  = int(input("Digite o número"))
+    numeros.append(numero)
+    if (primo(numero)):
+        primos.append(numero)
+        posicoes.append(i)
+
+for j in range(0,len(primos)):
+    print("O número", primos[j], ' está na posição', posicoes[j])
+    
+for primo in primos:
+    posicao = numeros.index(primo)
+    print("O primo ", primo, "está na posição ", posicao)
+
+
+
+
+
+# -*- coding: utf-8 -*-
+"""Untitled3.ipynb
+
+Automatically generated by Colaboratory.
+
+Original file is located at
+    https://colab.research.google.com/drive/17prii5HmTzKy8o9gji_USSMle1mVHypQ
+"""
+
+def criaTabuleiro():
+    cTabuleiro = []
+    
+    for i in range(8):
+        elemento = []
+        for j in range(8):
+            elemento.append("")
+            
+        cTabuleiro.append(elemento)
+    
+    return cTabuleiro     
+
+tabuleiro = criaTabuleiro()
+
+def verificaTamanhoTabuleiro(tabuleiro):
+    for i in range(len(tabuleiro)):
+        for j in range(len(tabuleiro[i])):
+            if(len(tabuleiro) or len(tabuleiro[j]) != 8):
+                return False
+            
+    return True
+
+def inicializaTabuleiro(tabuleiro):
+    verificaTamanhoTabuleiro(tabuleiro)
+    
+    for i in range(len(tabuleiro)):
+        for j in range(len(tabuleiro)):
+            if(i == 0) or (i == 1) or (i == 6) or (i == 7):
+                if(i == 0) or (i == 1):
+                    cor = "w"
+                      
+                elif(i == 6) or (i == 7):
+                    cor = "b" 
+                      
+            if (i==1):
+                if(j==1) or (j==3)or(j==5)or(j==7):
+                    peca="p" 
+                elif(j==0) or (j==2)or (j==4)or (j==6):
+                    cor,peca=" "," "   
+            if (i==6):
+                if(j==0) or (j==2)or(j==4)or(j==6):
+                    peca="p" 
+                elif(j==1) or (j==3)or (j==5)or (j==7):
+                    cor,peca=" "," "          
+            
+            if(i == 0):
+                if(j == 0):
+                    peca = "p"
+                elif (j == 6):
+                    peca = "p"
+                elif(j == 2) :
+                    peca = "p"
+                elif(j == 4):
+                    peca = "p"
+                elif(j==1) or (j==3)or (j==5)or (j==7):
+                    cor,peca=" "," "   
+            if(i == 7):
+                if(j == 1):
+                    peca = "p"
+                elif (j == 3):
+                    peca = "p"
+                elif(j == 5) :
+                    peca = "p"
+                elif(j == 7):
+                    peca = "p"
+                elif(j==0) or (j==2)or (j==4)or (j==6):
+                    cor,peca=" "," "           
+                    
+            if(i == 2) or (i == 3) or (i == 4) or (i == 5):
+                cor,peca = " "," "
+
+            tabuleiro[i][j] = (cor,peca)
+                 
+    return tabuleiro
+ 
+tabuleiro = inicializaTabuleiro(tabuleiro)
+
+def retornaPeca(tabuleiro, posicao):
+    
+    verificaTamanhoTabuleiro(tabuleiro)
+    
+    i, j = posicao 
+    
+    if(0 <= (i or j) <= 7):
+        peca = tabuleiro[i][j]
+    else:
+        return False
+    
+    return peca, i, j   
+def movePeca(tabuleiro, posicaoIni, posicaoFim):
+    
+    verificaTamanhoTabuleiro(tabuleiro)
+    
+    
+    pecaIni, i, j = retornaPeca(tabuleiro, posicaoIni)
+    pecaFim, k, l = retornaPeca(tabuleiro, posicaoFim)
+     
+    if((pecaIni and pecaFim) != False):
+        if(pecaIni != ""):
+            if(l != j)and((j==l-1 or j==l+1) and (i==k+1 or i== k-1)):
+                
+              if(pecaIni[0] == "w") and (pecaFim[0] == "b" or pecaFim[0] == " "):
+                tabuleiro[k][l], tabuleiro[i][j] = pecaIni, (" "," ")          
+              elif(pecaIni[0] == "b") and (pecaFim[0] == "w" or pecaFim[0] == " "):
+                tabuleiro[k][l], tabuleiro[i][j] = pecaIni, (" "," ")
+              #peca Dama. 
+              elif(pecaFim[0]==" " and pecaIni[0]=="w")and(k==7):
+                tabuleiro[k][l], tabuleiro[i][j] = ("W","D"), (" "," ")    
+              elif(pecaFim[0]=="b" and pecaIni[0]=="b")and(k==0):
+                tabuleiro[k][l], tabuleiro[i][j] = ("B","D"), (" "," ")
+    
+    return True
